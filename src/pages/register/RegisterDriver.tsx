@@ -22,7 +22,7 @@ const schema = yup.object().shape({
   mobileNumber: yup.string().required("Matric is required"),
 });
 
-const Register = () => {
+const RegisterDriver = () => {
   const {
     register,
     handleSubmit,
@@ -41,8 +41,14 @@ const Register = () => {
         justify-center items-center min-h-[100%]"
       >
         <div className="form-container border-2 p-10 min-w-[40%]">
-          <p className="text-4xl font-bold mb-2 text-main-blue">Sign Up</p>
-          <form action="" className="flex flex-col p-4" onSubmit={handleSubmit(onSubmit)}>
+          <p className="text-4xl font-bold mb-2 text-main-blue text-center">
+            Sign Up
+          </p>
+          <form
+            action=""
+            className="flex flex-col p-4"
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <div className="mb-4 border-2 rounded-sm">
               <input
                 className="pl-1 py-2 w-full"
@@ -92,4 +98,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterDriver;
