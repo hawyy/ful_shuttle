@@ -1,0 +1,5 @@
+const screenStyles = {
+  
+}
+
+export {screenStyles}

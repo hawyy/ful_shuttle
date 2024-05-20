@@ -1,13 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import RegisterPassanger from "./pages/register/RegisterPassanger.tsx";
-import RegisterDriver from "./pages/register/RegisterDriver.tsx";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import router from './routes/routes'
+import {RouterProvider} from 'react-router-dom'
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    {/* <App /> */}
-    <RegisterPassanger />
-    {/* <RegisterDriver /> */}
+    <RouterProvider router={router} />
   </React.StrictMode>
-);
+)
