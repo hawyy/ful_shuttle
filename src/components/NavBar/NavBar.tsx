@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
+import Logo from "../../assets/react.svg";
+
 interface NavLink {
   name: string;
   href: string;
@@ -22,9 +24,9 @@ const Navbar = () => {
       <section className="mx-auto w-full flex justify-between mb-5">
         <div className="logo ">
           <NavLink to={"/"}>
-            <span className="text-4xl text-button-blue font-extrabold cursor-pointer">
-              F.U.S
-            </span>
+            {/* <span className="text-4xl text-button-blue font-extrabold cursor-pointer"> */}
+            <img className="text-white" src={Logo} alt="FUL Shuttle" />
+            {/* </span> */}
           </NavLink>
         </div>
 
