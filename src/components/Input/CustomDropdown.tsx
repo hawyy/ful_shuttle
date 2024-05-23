@@ -38,7 +38,7 @@ const CustomDropdown = ({
       <select
         {...register(name)}
         className="flex flex-col w-full max-w-md mx-auto
-          p-3 border
+          p-4 border
          border-gray-300 rounded-lg shadow-sm focus:outline-none 
          focus:ring-2 focus:ring-main-blue focus:border-transparent bg-white
       "
