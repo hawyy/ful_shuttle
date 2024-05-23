@@ -28,7 +28,6 @@ const RegisterDriver = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
   } = useForm<IFormInput>({
     resolver: yupResolver(schema),
   });

@@ -2,7 +2,6 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import CustomInput from "../../components/Input/CustomInputField";
-import CustomSelect from "../../components/Input/CustomDropdown";
 import CustomDropdown from "../../components/Input/CustomDropdown";
 import BackgroundImageLayout from "../../layout/BackgroundImageLayout";
 import Navbar from "../../components/NavBar/NavBar";
@@ -31,7 +30,6 @@ const RegisterPassanger = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
   } = useForm<IFormInput>({
     resolver: yupResolver(schema),
   });

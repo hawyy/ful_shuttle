@@ -1,4 +1,4 @@
-import {createBrowserRouter, Link} from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
 import RegisterPassanger from '../pages/register/RegisterPassanger'
 import RegisterDriver from '../pages/register/RegisterDriver'
 import LandingPage from '../pages/landingpage/LandingPage'
