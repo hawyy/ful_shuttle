@@ -23,9 +23,11 @@ const Navbar = () => {
     <nav className="w-full flex flex-col">
       <div className="mx-auto w-full flex justify-between">
         <section className="logo ">
-          <span className="text-4xl text-button-blue font-extrabold cursor-pointer">
-            F.U.S
-          </span>
+          <NavLink to={"/"}>
+            <span className="text-4xl text-button-blue font-extrabold cursor-pointer">
+              F.U.S
+            </span>
+          </NavLink>
         </section>
         <div className="block lg:hidden">
           <button
