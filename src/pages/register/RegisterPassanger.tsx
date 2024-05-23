@@ -27,10 +27,7 @@ const schema = yup.object().shape({
 });
 
 const RegisterPassanger = () => {
-  const {
-    register,
-    handleSubmit,
-  } = useForm<IFormInput>({
+  const { register, handleSubmit } = useForm<IFormInput>({
     resolver: yupResolver(schema),
   });
 
@@ -60,19 +57,20 @@ const RegisterPassanger = () => {
             onSubmit={handleSubmit(onSubmit)}
           >
             <CustomInput
-              // label='Matric No'
+              label="Matric No"
               placeholder="14/30GC110"
               name="matricNo"
               register={register}
             />
             <CustomInput
-              // label='Department'
+              label="Department"
               placeholder="Buisness Admin"
               name="department"
               register={register}
             />
 
             <CustomDropdown
+              label="Gender"
               options={genderOptions}
               placeholder="Select Gender"
               name="gender"
@@ -80,14 +78,14 @@ const RegisterPassanger = () => {
             />
 
             <CustomInput
-              // label='Mobile Number'
+              label="Mobile Number"
               placeholder="+23450198364"
               name="mobileNumber"
               register={register}
             />
 
             <CustomInput
-              // label='Password'
+              label="Password"
               placeholder="**********"
               name="password"
               type="password"

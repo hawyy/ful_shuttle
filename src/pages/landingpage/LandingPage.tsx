@@ -10,10 +10,13 @@ const LandingPage = () => {
       <Navbar />
       <section
         className="flex flex-col-reverse mt-3
-                  md:mt-[20vh] md:flex-row
+                   md:mt-[20vh] md:flex-row
       "
       >
-        <div className="flex flex-1">
+        <div
+          className="flex 
+                     md:flex-1"
+        >
           <div className="left-hero">
             <div className="heading">
               <p className="text-5xl mb-5 font-bold">

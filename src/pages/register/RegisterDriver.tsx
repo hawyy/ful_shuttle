@@ -25,10 +25,7 @@ const schema = yup.object().shape({
 });
 
 const RegisterDriver = () => {
-  const {
-    register,
-    handleSubmit,
-  } = useForm<IFormInput>({
+  const { register, handleSubmit } = useForm<IFormInput>({
     resolver: yupResolver(schema),
   });
 
@@ -38,10 +35,7 @@ const RegisterDriver = () => {
   return (
     <BackgroundImageLayout>
       <Navbar />
-      <section
-        className="form-section flex-1 flex flex-col 
-        justify-center items-center min-h-[100%]"
-      >
+      <section className="form-section flex-1 flex flex-col justify-center items-center">
         <div className="form-container border-2 p-10 min-w-[40%]">
           <p className="text-4xl font-bold mb-2 text-white text-center">
             Sign Up
