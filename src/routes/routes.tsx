@@ -1,9 +1,9 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 import RegisterPassanger from '../pages/register/RegisterPassanger'
 import RegisterDriver from '../pages/register/RegisterDriver'
 import LandingPage from '../pages/landingpage/LandingPage'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <LandingPage />
