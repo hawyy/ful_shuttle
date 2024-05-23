@@ -26,7 +26,7 @@ const CustomDropdown = ({
   };
 
   return (
-    <div className="text-black">
+    <div className="flex flex-col w-full max-w-md mx-auto my-3 text-black">
       {label && (
         <label
           className="text-gray-700 text-sm font-bold mb-2"
@@ -37,7 +37,7 @@ const CustomDropdown = ({
       )}
       <select
         {...register(name)}
-        className="flex flex-col w-full max-w-md mx-auto my-3
+        className="flex flex-col w-full max-w-md mx-auto
           p-3 border
          border-gray-300 rounded-lg shadow-sm focus:outline-none 
          focus:ring-2 focus:ring-main-blue focus:border-transparent bg-white

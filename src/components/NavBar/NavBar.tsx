@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex flex-col">
-      <div className="mx-auto w-full flex justify-between">
+      <div className="mx-auto w-full flex justify-between mb-5">
         <section className="logo ">
           <NavLink to={"/"}>
             <span className="text-4xl text-button-blue font-extrabold cursor-pointer">
