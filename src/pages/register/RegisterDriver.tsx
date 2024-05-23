@@ -1,6 +1,8 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import BackgroundImageLayout from "../../layout/BackgroundImageLayout";
+import Navbar from "../../components/NavBar/NavBar";
 
 interface IFormInput {
   matricNo: string;
@@ -35,13 +37,14 @@ const RegisterDriver = () => {
     console.log(data);
   };
   return (
-    <div className="min-h-screen flex flex-row justify-between">
+    <BackgroundImageLayout>
+      <Navbar />
       <section
         className="form-section flex-1 flex flex-col 
         justify-center items-center min-h-[100%]"
       >
         <div className="form-container border-2 p-10 min-w-[40%]">
-          <p className="text-4xl font-bold mb-2 text-main-blue text-center">
+          <p className="text-4xl font-bold mb-2 text-white text-center">
             Sign Up
           </p>
           <form
@@ -86,15 +89,14 @@ const RegisterDriver = () => {
               />
             </div>
 
-            <button type="submit">Register</button>
+            <div className="w-full h-[1px] bg-gray-400 mt-4"></div>
+            <button className="mt-4 cursor-pointer" type="submit">
+              Register
+            </button>
           </form>
         </div>
       </section>
-
-      <section className="image-section bg-main-blue flex-1">
-        <h1>Right hero section</h1>
-      </section>
-    </div>
+    </BackgroundImageLayout>
   );
 };
 
