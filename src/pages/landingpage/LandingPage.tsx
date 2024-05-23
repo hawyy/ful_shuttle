@@ -13,24 +13,29 @@ const LandingPage = () => {
                    md:mt-[20vh] md:flex-row
       "
       >
-        <div
-          className="flex 
-                     md:flex-1"
-        >
+        <div className="flex md:flex-1">
           <div className="left-hero">
             <div className="heading">
-              <p className="text-5xl mb-5 font-bold">
+              <p
+                className="text-3xl mb-5 font-bold uppercase
+                md:text-5xl
+              "
+              >
                 {" "}
                 Federal University Lokoja Shuttle
               </p>
-              <p className="text-1xl text-gray-300 w-4/5 mb-5">
+              <p
+                className="text-1xl text-gray-300 mb-5 text-justify
+                  md:text-2xl 
+              "
+              >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
                 cupiditate vitae, adipisci voluptas perspiciatis fugit, magni
                 facilis in exercitationem id soluta ea illum quo quisquam. Velit
                 id voluptas veniam aperiam.
               </p>
 
-              <p className="text-sm text-gray-300 w-4/5">
+              <p className="text-sm text-gray-300">
                 Click to register as either a passanger or a driver
               </p>
             </div>
@@ -53,7 +58,7 @@ const LandingPage = () => {
 
         <div
           className="hidden 
-                        md:flex-1 md:gap-8 md:flex md:justify-center md:items-center"
+                    md:flex-1 md:gap-8 md:flex md:justify-center md:items-center"
         >
           <img className="" src={HeroLogo} alt="image description" />
         </div>

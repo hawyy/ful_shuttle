@@ -8,9 +8,7 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/login" },
-  { name: "Services", href: "/register" },
-  //   { name: "Contact", href: "/contact" },
+  { name: "About", href: "/dashboard" },
 ];
 
 const Navbar = () => {
