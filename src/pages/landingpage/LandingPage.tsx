@@ -9,7 +9,7 @@ const LandingPage = () => {
     <BackgroundImageLayout>
       <Navbar />
       <section
-        className="flex flex-col-reverse mt-3
+        className="flex flex-col-reverse mt-10
                    md:mt-[20vh] md:flex-row
       "
       >
@@ -51,7 +51,10 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <div className="text-white flex-1 gap-8 flex justify-center items-center">
+        <div
+          className="hidden 
+                        md:flex-1 md:gap-8 md:flex md:justify-center md:items-center"
+        >
           <img className="" src={HeroLogo} alt="image description" />
         </div>
       </section>

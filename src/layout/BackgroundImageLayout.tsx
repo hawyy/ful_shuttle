@@ -3,7 +3,7 @@ import { PropsWithChildren } from "react";
 const BackgroundImageLayout = (props: PropsWithChildren) => {
   return (
     <main
-      className="bg-black box-border bg-cover flex text-white flex-col h-screen p-10 subpixel-antialiased font-mono
+      className="bg-black box-border bg-cover flex text-white flex-col h-[100%] p-10 subpixel-antialiased font-mono
     "
     >
       {props.children}
