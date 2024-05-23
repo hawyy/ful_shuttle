@@ -2,6 +2,7 @@
   "name": "ful_shuttle",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://hawyy.github.io/ful_shutlle",
   "type": "module",
   "scripts": {
     "dev": "vite",
