@@ -1,5 +1,0 @@
-const screenStyles = {
-  
-}
-
-export {screenStyles}

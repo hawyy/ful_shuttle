@@ -1,7 +1,7 @@
 import { createHashRouter } from 'react-router-dom'
-import RegisterPassanger from '../pages/register/RegisterPassanger'
-import RegisterDriver from '../pages/register/RegisterDriver'
-import LandingPage from '../pages/landingpage/LandingPage'
+import LandingPage from '../modules/home/LandingPage'
+import RegisterPassanger from '../modules/auth/views/RegisterPassanger'
+import RegisterDriver from '../modules/auth/views/RegisterDriver'
 
 const router = createHashRouter([
   {

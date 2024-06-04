@@ -1,46 +1,27 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import BackgroundImageLayout from "../../layout/BackgroundImageLayout";
-import Navbar from "../../components/NavBar/NavBar";
-import RegisterFormContainer from "../../layout/RegisterFormContainer";
-import CustomInput from "../../components/Input/CustomInputField";
-import CustomDropdown from "../../components/Input/CustomDropdown";
+import BackgroundImageLayout from "../../../layout/BackgroundImageLayout";
+import Navbar from "../../../components/NavBar/NavBar";
+import RegisterFormContainer from "../../../layout/RegisterFormContainer";
+import CustomInput from "../../../components/Input/CustomInputField";
+import CustomDropdown from "../../../components/Input/CustomDropdown";
+import {
+  genderOptions,
+  DriverSchema,
+  CreateDriverRequest,
+} from "../models/register.driver";
 
-interface IFormInput {
-  plateNumber: string;
-  email: string;
-  gender: string;
-  password: string;
-  mobileNumber: string;
-}
-
-// Define the validation schema
-const schema = yup.object().shape({
-  plateNumber: yup.string().required("Matric is required"),
-  email: yup.string().email().required("Email is required"),
-  password: yup
-    .string()
-    .min(6, "Password must be at least 6 characters long")
-    .required("Password is required"),
-  gender: yup.string().required("gender is required"),
-  mobileNumber: yup.string().required("mobile number is required"),
-});
-
-const genderOptions = [
-  { value: "male", label: "Male" },
-  { value: "female", label: "Female" },
-  { value: "other", label: "Other" },
-];
+import { registerUser } from "../services";
 
 const RegisterDriver = () => {
-  const { register, handleSubmit } = useForm<IFormInput>({
-    resolver: yupResolver(schema),
+  const { register, handleSubmit } = useForm<CreateDriverRequest>({
+    resolver: yupResolver(DriverSchema),
   });
 
-  const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<CreateDriverRequest> = (data) => {
+    registerUser(data);
   };
+
   return (
     <BackgroundImageLayout>
       <Navbar />

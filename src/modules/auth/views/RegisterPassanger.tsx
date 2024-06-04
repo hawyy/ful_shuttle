@@ -1,44 +1,22 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import CustomInput from "../../components/Input/CustomInputField";
-import CustomDropdown from "../../components/Input/CustomDropdown";
-import BackgroundImageLayout from "../../layout/BackgroundImageLayout";
-import Navbar from "../../components/NavBar/NavBar";
-import RegisterFormContainer from "../../layout/RegisterFormContainer";
-
-interface IFormInput {
-  matricNo: string;
-  department: string;
-  gender: string;
-  password: string;
-  mobileNumber: string;
-}
-
-// Define the validation schema
-const schema = yup.object().shape({
-  matricNo: yup.string().required("Matric is required"),
-  department: yup.string().required("Email is required"),
-  password: yup
-    .string()
-    .min(6, "Password must be at least 6 characters long")
-    .required("Password is required"),
-  gender: yup.string().required("Matric is required"),
-  mobileNumber: yup.string().required("Matric is required"),
-});
+import CustomInput from "../../../components/Input/CustomInputField";
+import CustomDropdown from "../../../components/Input/CustomDropdown";
+import BackgroundImageLayout from "../../../layout/BackgroundImageLayout";
+import Navbar from "../../../components/NavBar/NavBar";
+import RegisterFormContainer from "../../../layout/RegisterFormContainer";
+import {
+  PassangerFormInput,
+  PassangerSchema,
+  genderOptions,
+} from "../models/register.passanger";
 
 const RegisterPassanger = () => {
-  const { register, handleSubmit } = useForm<IFormInput>({
-    resolver: yupResolver(schema),
+  const { register, handleSubmit } = useForm<PassangerFormInput>({
+    resolver: yupResolver(PassangerSchema),
   });
 
-  const genderOptions = [
-    { value: "male", label: "Male" },
-    { value: "female", label: "Female" },
-    { value: "other", label: "Other" },
-  ];
-
-  const onSubmit: SubmitHandler<IFormInput> = (data) => {
+  const onSubmit: SubmitHandler<PassangerFormInput> = (data) => {
     console.log(data);
   };
   return (
