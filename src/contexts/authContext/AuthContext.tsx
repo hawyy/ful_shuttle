@@ -1,10 +1,48 @@
-import { createContext } from "react";
-import { Auth } from "../../models/authModel";
+import { createContext, useEffect, useState } from "react";
 import { PropsWithChildren } from "react";
+import {
+  login,
+  logout,
+  getAuthenticatedUser,
+  registerUser,
+} from "../../modules/auth/services";
 
-
-export const AuthContext = createContext<Auth | null>(null);
+export interface AuthContextType {
+  token: String | null;
+  email: String;
+  isAuthenticated: boolean;
+}
+export const AuthContext = createContext<AuthContextType>({
+  token: "",
+  email: "",
+  isAuthenticated: false
+});
 
 export const AuthProvider = (props: PropsWithChildren) => {
-  // implement the authentication logic 
-}
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [token, setToken] = useState<String>("");
+
+  const checkAuthStatus = () => {
+    const checkToken = localStorage.getItem("token");
+
+    console.log(checkToken);
+    setIsAuthenticated(!!token);
+    setToken(checkToken !== null ? checkToken : "");
+  };
+
+  useEffect(() => {
+    checkAuthStatus();
+  }, [token]);
+
+  return (
+    <AuthContext.Provider
+      value={{
+        isAuthenticated: isAuthenticated,
+        token: token,
+        email: "",
+      }}
+    >
+      {props.children}
+    </AuthContext.Provider>
+  );
+};

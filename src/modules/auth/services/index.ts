@@ -1,10 +1,10 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../../firebase"
-import { setDoc, doc, addDoc, collection } from "firebase/firestore"
-import { CreateDriverRequest } from "../models/register.driver";
+import { setDoc, doc } from "firebase/firestore"
+import { IAuthModel, IUser } from "../models";
 
 
-export const registerUser = async (request: CreateDriverRequest) => {
+export const registerUser = async (request: IUser) => {
   try {
     const createdUser = await createUserWithEmailAndPassword(auth, request.email, request.password);
     const userId = createdUser.user.uid;
@@ -18,6 +18,7 @@ export const registerUser = async (request: CreateDriverRequest) => {
 export const login = async (user: IAuthModel) => {
   try {
     const createdUser = await signInWithEmailAndPassword(auth, user.email, user.password);
+    // push the token into the localstorage 
     console.log(createdUser);
   } catch (error) {
     console.log(error);
@@ -33,7 +34,7 @@ export const getAuthenticatedUser = () => {
 }
 
 export const getUser = (email: string) => {
-  
+
 }
 export const logout = () => {
 
